@@ -1,0 +1,30 @@
+netcdf ERA5_lakebottomtemp_19880120 {
+dimensions:
+	longitude = 1440 ;
+	latitude = 721 ;
+	time = 24 ;
+variables:
+	float longitude(longitude) ;
+		longitude:units = "degrees_east" ;
+		longitude:long_name = "longitude" ;
+	float latitude(latitude) ;
+		latitude:units = "degrees_north" ;
+		latitude:long_name = "latitude" ;
+	int time(time) ;
+		time:units = "hours since 1900-01-01 00:00:00.0" ;
+		time:long_name = "time" ;
+		time:calendar = "gregorian" ;
+	short lblt(time, latitude, longitude) ;
+		lblt:scale_factor = 0.000505738759479957 ;
+		lblt:add_offset = 289.73070416187 ;
+		lblt:_FillValue = -32767s ;
+		lblt:missing_value = -32767s ;
+		lblt:units = "K" ;
+		lblt:long_name = "Lake bottom temperature" ;
+
+// global attributes:
+		:Conventions = "CF-1.6" ;
+        :title = "ERA5 Reanalysis lake bottom temperature for 1988-01-20" ;
+        :summary = "Temperature of water at the bottom of inland water bodies (lakes, reservoirs, rivers) and coastal waters. ECMWF implemented a lake model in May 2015 to represent the water temperature and lake ice of all the world’s major inland water bodies in the Integrated Forecasting System. The model keeps lake depth and surface area (or fractional cover) constant in time." ;
+		:history = "2024-07-31 04:30:14 GMT by grib_to_netcdf-2.28.1: /opt/ecmwf/mars-client/bin/grib_to_netcdf -S param -o /cache/data8/adaptor.mars.internal-1722400214.2145498-3256-9-05d53f79-aac3-4bc0-bd28-35a251650ab9.nc /cache/tmp/05d53f79-aac3-4bc0-bd28-35a251650ab9-adaptor.mars.internal-1722400206.890052-3256-5-tmp.grib" ;
+}
